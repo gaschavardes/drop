@@ -103,9 +103,9 @@ export default class Drop extends Mesh {
 
 		for ( let i = 0; i < numblobs; i ++ ) {
 
-			const ballx = Math.sin( i + 1.26 * time * ( 1.03 + 0.5 * Math.cos( 0.21 * i ) ) ) * 0.1 + 0.5;
-			const bally = Math.abs( Math.cos( i + 1.12 * time * Math.cos( 1.22 + 0.1424 * i ) ) ) * 0.1 + 0.5; // dip into the floor
-			const ballz = Math.cos( i + 1.32 * time * 0.1 * Math.sin( ( 0.92 + 0.53 * i ) ) ) * 0.1 + 0.5;
+			let ballx = Math.sin( i + 1.26 * time * ( 1.03 + 0.5 * Math.cos( 0.21 * i ) ) ) * 0.1 + 0.5;
+			let bally = Math.abs( Math.cos( i + 1.12 * time * Math.cos( 1.22 + 0.1424 * i ) ) ) * 0.1 + 0.5; // dip into the floor
+			let ballz = Math.cos( i + 1.32 * time * 0.1 * Math.sin( ( 0.92 + 0.53 * i ) ) ) * 0.1 + 0.5;
 
 			// const ballx = 0.5;
 			// const bally = 0.5;
@@ -119,7 +119,15 @@ export default class Drop extends Mesh {
 			// 	object.addBall( ballx, bally, ballz, strength, subtract );
 
 			// }
+
+			if(i === numblobs - 1) {
+				ballx = 0.5 + Math.sin(time * 0.5) * 0.3;
+				bally = 0.5 + Math.cos(time * 0.2) * 0.3;
+				ballz = 0.5;
+			}
+
 			object.addBall( ballx, bally, ballz, strength, subtract );
+
 
 		}
 
