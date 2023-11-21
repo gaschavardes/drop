@@ -4,7 +4,7 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'brain-map',
+    title: 'The drop',
     htmlAttrs: {
       lang: 'en'
     },

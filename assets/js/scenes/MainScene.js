@@ -163,7 +163,7 @@ export default class MainScene extends Scene {
 			models: {}
 		}
 
-		store.AssetLoader.loadTexture('/_nuxt/public/textures/background.jpeg').then(texture => {
+		store.AssetLoader.loadTexture(backgroundImg).then(texture => {
 			this.backgroundTexture = texture
 		})
 	}

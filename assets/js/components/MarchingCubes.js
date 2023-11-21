@@ -156,7 +156,7 @@ export default class Drop extends Mesh {
 
 	load() {
 		console.log('load')
-		store.AssetLoader.loadTexture('/_nuxt/public/textures/iridescent32.png').then(texture => {
+		store.AssetLoader.loadTexture(matcap).then(texture => {
 			this.matcap = texture
 		})
 	}
