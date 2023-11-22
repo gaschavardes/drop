@@ -24,7 +24,7 @@ export default class DropMaterial extends ShaderMaterial {
 					uMatcap: {value: options.matcap}
 				},
 				defines: {
-					REFRACT: options.refract,
+					REFRACT: true,
 					USE_NORMAL: true,
 					USE_MATCAP: true,
 				}
@@ -36,7 +36,6 @@ export default class DropMaterial extends ShaderMaterial {
 			uniforms: options.uniforms,
 			defines: options.defines
 		})
-		console.log(options)
 		this.globalUniforms = options.globalUniforms
 		this.uniforms = Object.assign(this.uniforms, this.globalUniforms)
 	}

@@ -24,7 +24,7 @@ varying float zVal;
 // float a = .5;
 // float diffuse = 0.2;
 
-float ior = 1.2;
+float ior = 1.1;
 float diffuse = 0.2;
 
 vec3 fogColor = vec3(1.0);

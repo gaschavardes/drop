@@ -20,7 +20,7 @@ void main()	{
 	
 	vec4 worldPosition = modelMatrix * vec4( position, 1.0);
 
-	// #ifndef REFRACT
+	#ifdef REFRACT
 		vec3 cameraToVertex;
 		if ( isOrthographic ) {
 			cameraToVertex = normalize( vec3( - viewMatrix[ 0 ][ 2 ], - viewMatrix[ 1 ][ 2 ], - viewMatrix[ 2 ][ 2 ] ) );
@@ -30,7 +30,7 @@ void main()	{
 		}
 		vec3 reflectNormal = inverseTransformDirection( normal, viewMatrix );
 		vReflect = reflect( cameraToVertex, reflectNormal );
-	// #endif
+	#endif
 
 	eyeVector = normalize(worldPosition.xyz - cameraPosition);
 	worldNormal = normalize( modelViewMatrix * vec4(objectNormal, 0.0)).xyz;

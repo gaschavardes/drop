@@ -45,7 +45,6 @@ export default class Drop extends Mesh {
 
 		};
 
-		console.log(this.effect)
 		this.effect.position.set(0, 0, -2)
 		this.add( this.effect );
 
@@ -60,20 +59,10 @@ export default class Drop extends Mesh {
 			matcap: this.matcap,
 			progress: 0,
 			fresnelVal: 1,
-			refractPower: 10,
+			refractPower: 2,
 			uMap: store.MainScene.backgroundTexture
 		})
-		console.log(store.MainScene.backgroundTexture.image)
 		this.backdropMaterial = new BackDropMaterial()
-		// this.item = new Mesh(new BufferGeometry(), this.DropMaterial)
-		// this.fullItem = new Mesh(new PlaneGeometry(), this.backDropMaterial)
-		// this.drawPieces()
-		// this.drawBack()
-		// this.item.rotation.x = -Math.PI * 0.5
-		// this.fullItem.rotation.x = -Math.PI * 0.5
-		// this.add(this.item)
-		// this.add(this.fullItem)
-		// this.fullItem.layers.set(1)
 	}
 
 	createMesh() {
@@ -141,7 +130,6 @@ export default class Drop extends Mesh {
 
 	animate() {
 		this.tick++
-		//console.log(this.effect)
 		this.updateCubes( this.effect, store.WebGL.globalUniforms.uTime.value, this.effectController.numBlobs, this.effectController.floor, this.effectController.wallx, this.effectController.wallz );
 
 
@@ -163,7 +151,6 @@ export default class Drop extends Mesh {
 	}
 
 	load() {
-		console.log('load')
 		store.AssetLoader.loadTexture(matcap).then(texture => {
 			this.matcap = texture
 		})

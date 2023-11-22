@@ -2,6 +2,7 @@
 import { Color, PerspectiveCamera, CameraHelper, OrthographicCamera, Scene, AmbientLight, SpotLight, GridHelper, Vector2, ShaderMaterial, WebGLRenderTarget} from 'three'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
 import Drop from '../components/Drop'
+import Text from '../components/Text'
 import Background from '../components/Background'
 import MarchingCubes from '../components/MarchingCubes'
 import store from '../store'
@@ -20,7 +21,6 @@ import backgroundImg from '../../../public/textures/background.jpeg'
 export default class MainScene extends Scene {
 	constructor() {
 		super()
-		console.log(backgroundImg)
 		store.MainScene = this
 		this.options = {
 			controls: window.urlParams.has('controls')
@@ -57,6 +57,7 @@ export default class MainScene extends Scene {
 		this.components = {
 			MarchingCubes: new MarchingCubes(),
 			background: new Background(),
+			text: new Text()
 			// letter: new Letter(),
 			// projects: new Projects()
 		}
@@ -78,7 +79,6 @@ export default class MainScene extends Scene {
 			this.components[key].build(this.objectData)
 			this.add(this.components[key])
 		}
-		console.log(this)
 		// this.waterTexture = new WaterTexture({ debug: true })
 
 		// this.buildPasses()
