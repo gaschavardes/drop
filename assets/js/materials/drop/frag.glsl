@@ -120,8 +120,8 @@ void main() {
 		slide = (float( UNROLLED_LOOP_INDEX ) * 0.1 )/ 16.0 + noise( screenUv ) * .1;
 
 		refractUvR = refractUv - refractNormal * ( refractPower + slide * 1.0 ) * .2;
-		refractUvG = refractUv - refractNormal * ( refractPower + slide * 2. ) * .2;
-		refractUvB = refractUv - refractNormal * ( refractPower + slide * 3. ) * .2;
+		refractUvG = refractUv - refractNormal * ( refractPower + slide * 1.5 ) * .2;
+		refractUvB = refractUv - refractNormal * ( refractPower + slide * 2. ) * .2;
 
 		refractCol.x += texture2D( envMap, refractUvR ).x;
 		refractCol.y += texture2D( envMap, refractUvG ).y;

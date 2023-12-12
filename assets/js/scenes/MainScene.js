@@ -51,7 +51,7 @@ export default class MainScene extends Scene {
 		this.controls.enabled = this.options.controls
 		this.controls.enableDamping = true
 
-		this.background = new Color(0xFFFFFF)
+		this.background = new Color(0xF0F0F0)
 
 		/* Add scene components */
 		this.components = {
