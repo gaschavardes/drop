@@ -1,7 +1,7 @@
 import {MarchingCubes} from 'three/examples/jsm/objects/MarchingCubes';
 import { Mesh, SphereGeometry, MeshBasicMaterial, Color, WebGLRenderTarget} from 'three/src/Three'
 import { DropMaterial, BackDropMaterial } from '../materials'
-import matcap from '../../../public/textures/iridescent32.png'
+import matcap from '../../../public/textures/10.png'
 import store from '../store'
 export default class Drop extends Mesh {
 	constructor(){
@@ -21,7 +21,7 @@ export default class Drop extends Mesh {
 		this.fboCreate()
 
 
-		const resolution = 100;
+		const resolution = 80;
 		this.material = this.dropMaterial
 		this.effect = new MarchingCubes( resolution, this.material, true, true, 100000 );
 		this.effect.position.set( 0, 0, 0 );
@@ -59,7 +59,7 @@ export default class Drop extends Mesh {
 			matcap: this.matcap,
 			progress: 0,
 			fresnelVal: 1,
-			refractPower: 2,
+			refractPower: 0.1,
 			uMap: store.MainScene.backgroundTexture
 		})
 		this.backdropMaterial = new BackDropMaterial()

@@ -119,9 +119,9 @@ void main() {
 		
 		slide = (float( UNROLLED_LOOP_INDEX ) * 0.1 )/ 16.0 + noise( screenUv ) * .1;
 
-		refractUvR = refractUv - refractNormal * ( refractPower + slide * 1.0 ) * 0.5;
-		refractUvG = refractUv - refractNormal * ( refractPower + slide * 1.5 ) * 0.5;
-		refractUvB = refractUv - refractNormal * ( refractPower + slide * 2.0 ) * 0.5;
+		refractUvR = refractUv - refractNormal * ( refractPower + slide * 1.0 ) * .2;
+		refractUvG = refractUv - refractNormal * ( refractPower + slide * 2. ) * .2;
+		refractUvB = refractUv - refractNormal * ( refractPower + slide * 3. ) * .2;
 
 		refractCol.x += texture2D( envMap, refractUvR ).x;
 		refractCol.y += texture2D( envMap, refractUvG ).y;
@@ -197,5 +197,4 @@ void main() {
 
 	outgoingLight = mix(vec3(1.), outgoingLight, min(glowThreshold, 1.));
 	gl_FragColor = vec4(outgoingLight, zthreshold);
-	// gl_FragColor = vec4(vec3(backfaceBroken), 1.);	
 }

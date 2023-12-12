@@ -51,12 +51,12 @@ export default class MainScene extends Scene {
 		this.controls.enabled = this.options.controls
 		this.controls.enableDamping = true
 
-		this.background = new Color(0x222222)
+		this.background = new Color(0xFFFFFF)
 
 		/* Add scene components */
 		this.components = {
 			MarchingCubes: new MarchingCubes(),
-			background: new Background(),
+			// background: new Background(),
 			text: new Text()
 			// letter: new Letter(),
 			// projects: new Projects()

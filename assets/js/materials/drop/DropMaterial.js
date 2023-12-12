@@ -19,8 +19,8 @@ export default class DropMaterial extends ShaderMaterial {
 					uTime: { value: store.WebGL.globalUniforms.uTime.value },
 					uFresnelVal: { value: options.fresnelVal },
 					uRefractPower: { value: options.refractPower },
-					uBlendMode: { value: 4},
-					uDiffuseMatcapBlend: { value : 0.3},
+					uBlendMode: { value: 1},
+					uDiffuseMatcapBlend: { value : .1},
 					uMatcap: {value: options.matcap}
 				},
 				defines: {
